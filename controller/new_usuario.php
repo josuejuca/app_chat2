@@ -21,7 +21,7 @@ and open the template in the editor.
             $nome = $_POST["nome"];
             $email = $_POST["email"];
             $login = $_POST["login"];
-            $senha = $_POST["senha"];
+            $senha = md5($_POST["senha"]);
             $idPerfil = $_POST["idPerfil"];
 
             if (($nome == "") or ( $email == "" ) or ($login == "") or ($senha == "") or ($idPerfil == ""))
@@ -45,11 +45,12 @@ and open the template in the editor.
                 $resutado = $usuarioDAO ->Gravar($usarioDTO);
                
                
-            echo "<p><b>Nome:</p></b>".$nome;
+            /*echo "<p><b>Nome:</p></b>".$nome;
             echo "<p><b>Email:</p></b>".$email;
             echo "<p><b>Login:</p></b>".$login;
             echo "<p><b>Senha:</p></b>".$senha;
-            echo "<p><b>Escolha Perfil:</p></b>".$idPerfil;
+            echo "<p><b>Escolha Perfil:</p></b>".$idPerfil;*/
+                
             }
        ?>
     </body>
